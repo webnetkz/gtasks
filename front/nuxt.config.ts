@@ -1,6 +1,14 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
+
+  buildModules: [
+    '@pinia/nuxt',
+  ],
+
+  pinia: {
+    storesDirs: ['./stores/**'],
+  },
+
   vite: {
     server: {
       watch: {
@@ -9,4 +17,10 @@ export default defineNuxtConfig({
       },
     },
   },
+
+  css: [
+    '~/assets/css/global.css'
+  ],
+
+  modules: ["@pinia/nuxt"]
 })
