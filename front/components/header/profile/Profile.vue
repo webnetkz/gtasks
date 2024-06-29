@@ -2,7 +2,6 @@
 
 <template>
   <div class="profile">
-
   </div>
 </template>
 
@@ -18,5 +17,7 @@ export default {
     height: 36px;
     border-radius: 50%;
     cursor: pointer;
+    background: url('@/public/favicon.ico');
+    background-size: contain;
   }
 </style>

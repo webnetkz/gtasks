@@ -1,16 +1,19 @@
 <template>
   <header>
     <NuxtLink to="/" class="logo">
-      <img src="@/public/favicon.ico">
+      <Profile />
     </NuxtLink>
   </header>
 </template>
 
 <script>
+import Profile from './profile/Profile.vue';
+
+
 export default {
   components:
   {
-
+    Profile
   }  
 }
 </script>

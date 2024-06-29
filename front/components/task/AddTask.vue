@@ -31,6 +31,7 @@ export default {
   display: flex;
   align-items: center;
   cursor: pointer;
+  margin-bottom: 20px;
 }
 .add-task:hover .add-task-plus {
   color: var(--white);

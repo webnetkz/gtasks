@@ -12,6 +12,7 @@
   --deep-gray: rgb(119, 124, 130);
   --height-header: 55px;
   --white: white;
+  --white-05: rgba(255,255,255, 0.5);
   --red: red;
 }
 
@@ -28,4 +29,50 @@
 
 body {
   background: var(--gray);
+}
+*[contenteditable="true"] {
+  outline: none;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 40px;
+  width: auto;
+  display: inline;
+}
+
+
+
+
+
+/* SCROLL */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--deep-gray);
+  border-radius: 12px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--deep-gray);
+  cursor: pointer;
+}
+
+::-webkit-scrollbar-button:vertical:start:decrement {
+  opacity: 0;
+}
+
+::-webkit-scrollbar-button:vertical:end:increment {
+  opacity: 0;
+}
+
+::-webkit-scrollbar-button:horizontal:start:decrement {
+  opacity: 0;
+}
+
+::-webkit-scrollbar-button:horizontal:end:increment {
+  opacity: 0;
 }

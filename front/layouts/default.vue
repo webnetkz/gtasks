@@ -22,7 +22,6 @@ export default {
 <style scoped>
 #content {
   height: calc(100vh - var(--height-header));
-  padding: 20px;
-  padding-top: calc(var(--height-header) + 20px);
+  padding-top: calc(var(--height-header));
 }
 </style>
