@@ -87,24 +87,24 @@ export default {
   border-color: var(--deep-gray);
 }
 .color-1 {
-  background: gray;
+  background: rgba(128, 128, 128, 0.8);
 }
 .color-2 {
-  background: white;
+  background: rgba(255, 255, 255, 0.8);
 }
 .color-3 {
-  background: blue;
+  background: rgba(0, 0, 255, 0.8);
 }
 .color-4 {
-  background: red;
+  background: rgba(255, 0, 0, 0.8);
 }
 .color-5 {
-  background: orange;
+  background: rgba(255, 165, 0, 0.8);
 }
 .color-6 {
-  background: yellow;
+  background: rgba(255, 255, 0, 0.8);
 }
 .color-7 {
-  background: green;
+  background: rgb(0, 128, 0, 0.8);
 }
 </style>

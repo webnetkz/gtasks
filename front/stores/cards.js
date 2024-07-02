@@ -21,6 +21,16 @@ export const useCardStore = defineStore('cards', {
       this.cards = this.cards.filter(card => card.id !== id)
     },
 
+    seveCardName(id, name)
+    {
+      id = Number(id);
+      const card = this.cards.find(card => card.id === id);
+      if (card)
+      {
+        card.name = name;
+      }
+    },
+
     setColorCard(id, color)
     {
       id = Number(id);

@@ -1,34 +1,68 @@
 <template>
-  <div class="task" @mousemove="showOptions" @mouseleave="hideOptions">
-    <span class="status-task"></span>
-    <p>Task</p>
-    <TaskOptions v-if="isShowOptions">
-      <h2>33</h2>
-    </TaskOptions>
+  <div>
+    <div v-for="task in tasks" :key="task.id">
+      <div v-if="task.card_id === card_id">
+        <div class="task" @mousemove="showOptions" @mouseleave="hideOptions">
+          <span class="status-task"></span>
+          <p>{{ task.name }}</p>
+          <TaskOptions v-if="isShowOptions">
+            <h2>33</h2>
+          </TaskOptions>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
+import { useTaskStore } from '~/stores/tasks';
 import TaskOptions from './TaskOptions.vue';
 
-export default {
-  components: {
-    TaskOptions
+
+export default
+{
+  components:
+  {
+    TaskOptions,
   },
 
-  data() {
-    return {
-      isShowOptions: false  
+  props:
+  {
+    card_id:
+    {
+      type: Number,
+      require: true,
     }
   },
 
-  methods: {
-    showOptions() {
+  data()
+  {
+    return {
+      isShowOptions: false, 
+    };
+  },
+
+  setup()
+  {
+    const taskStore = useTaskStore();
+
+    const tasks = computed(() => taskStore.tasks);
+
+    return {
+      tasks,
+    };
+  },
+
+  methods:
+  {
+    showOptions()
+    {
       this.isShowOptions = true;
     },
-    hideOptions() {
+    hideOptions()
+    {
       this.isShowOptions = false;
-    }
+    },
   }
 }
 </script>
@@ -44,11 +78,12 @@ export default {
   min-height: 45px;
 }
 .task:hover {
-  box-shadow: var(--shadow);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 .task p {
   width: 100%;
   text-align: left;
+  cursor: text;
 }
 .status-task {
   margin-right: 20px;

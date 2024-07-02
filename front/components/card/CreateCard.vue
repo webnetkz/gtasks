@@ -1,13 +1,43 @@
 <template>
-  <div class="create-card" contenteditable="true">
+  <div
+    class="create-card"
+    contenteditable="true"
+    @blur="addNewCard"
+    @keyup.enter="addNewCard"
+    @click="$event.target.innerText = ''"
+  >
     <p>+ Add new card</p>
   </div>
-  <div class="stub-end"></div>
 </template>
 
 <script>
-export default {
+export default
+{
   name: 'CreateCard',
+
+  props:
+  {
+    addNewCard: {
+      type: Function,
+      require: true,
+    }
+  },
+
+  setup(props)
+  {
+    const addNewCard = (event) =>
+    {
+      if (event.target.innerText.trim() !== '')
+      {
+        props.addNewCard(event.target.innerText);
+      }
+      event.target.innerText = '+ Add new card';
+    }
+
+    return {
+      addNewCard
+    };
+  }
 }
 </script>
 
@@ -16,6 +46,7 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
     padding: 10px 20px;
     min-width: var(--width-cart);
     height: 50px;
@@ -28,8 +59,5 @@ export default {
   .create-card:focus {
     background: var(--white);
     box-shadow: var(--shadow);
-  }
-  .stub-end {
-    min-width: 50px;
   }
 </style>

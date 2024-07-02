@@ -1,7 +1,7 @@
 <template>
   <div class="task-options" @click="togglePopup">
     <svg class="task-options" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path></svg>
-    <Popup v-if="isPopupVisible"  @close="isPopupVisible = false">
+    <Popup v-if="isPopupVisible"  @close="isPopupVisible = false" class="pupup-task-options">
       <slot></slot>
     </Popup>
   </div>
@@ -11,7 +11,8 @@
 import Popup from '~/components/Popup.vue'
 
 
-export default {
+export default
+{
   name: 'TaskOptions',
 
   components:
@@ -48,5 +49,9 @@ export default {
 .task-options > svg:hover {
   fill: var(--red);
   transform: rotateZ(360deg);
+}
+.pupup-task-options {
+  left: 34px;
+  top: -15px;
 }
 </style>
